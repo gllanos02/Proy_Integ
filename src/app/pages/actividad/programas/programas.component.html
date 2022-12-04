@@ -1,4 +1,4 @@
-<button type="button" (click)="openModal()" class="float-right btn btn-primary mb-5"  >Nuevo</button>
+<button type="button" (click)="openModal()" class="float-right btn btn-info mb-5">Nuevo</button>
 <div class="table-responsive">
   <table class="table table-bordered table-striped ">
     <thead>
@@ -14,11 +14,11 @@
         <td>{{programa.proId}}</td>
         <td>{{programa.proNombre}}</td>
         <td>{{programa.proDescripcion}}</td>
-        <td>
+        <td align="center">
           <button type="button" class="btn btn-sm btn-warning" (click)="openModalEdit(programa)">Editar
           </button>
         </td>
-        <td>
+        <td align="center">
           <button type="button" class="btn btn-sm btn-danger" (click)="onDelete(programa)">Eliminar
           </button>
         </td>

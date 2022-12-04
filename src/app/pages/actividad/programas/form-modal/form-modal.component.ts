@@ -10,7 +10,6 @@ import {ProgramaService} from "../../../../providers/services/programa.service";
 })
 export class FormModalComponent implements OnInit {
 
-
   @Input() title: any;
   @Input() proId: any;
   @Input() item: any;

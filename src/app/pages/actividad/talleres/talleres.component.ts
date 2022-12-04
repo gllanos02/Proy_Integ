@@ -25,6 +25,9 @@ export class TalleresComponent implements OnInit {
     });
   }
 
+
+
+
   openModal(): void {
     const modal = this.modalService.open(FormModalTallerComponent, {
       size: 'lg',
@@ -40,13 +43,12 @@ export class TalleresComponent implements OnInit {
           title: 'Taller',
           text: `${res.message}`,
           showConfirmButton: false,
-          timer: 1500
+          timer: 1300
         })
         this.getTalleres();
       }
-    }).catch(err => {});
+    })
   }
-
   openModalEdit(item: any): any {
     const modal = this.modalService.open(FormModalTallerComponent, {
       size: 'lg',
@@ -58,20 +60,18 @@ export class TalleresComponent implements OnInit {
     modal.componentInstance.title = 'Modificar';
     modal.result.then(res => {
       if (res.success) {
-        this.getTalleres();
-        //swal.fire('Empleado',`${res.message}`, 'success')
         Swal.fire({
-          title: 'Editar',
-          text: `${res.message}`,
+          position: 'center',
           icon: 'success',
-          confirmButtonColor: '#7f264a',
-          timer: 1500
+          title: 'Taller',
+          text: `${res.message}`,
+          showConfirmButton: false,
+          timer: 1300
         });
+        this.getTalleres();
       }
-    }).catch(res => {
     });
   }
-
   public onDelete(item: any): void {
     const ID = item.taId;
     const mensaje = '¿ Desea eliminar? : ' + ' ' + item.taTema;
@@ -94,7 +94,6 @@ export class TalleresComponent implements OnInit {
               Swal.fire({
                 title: 'Eliminado',
                 text: data.message,
-                icon:'success',
                 backdrop: true,
                 //animation: true,
                 showConfirmButton: false,

@@ -19,12 +19,13 @@ export class FormModalTallerComponent implements OnInit {
   programas: any = [];
   constructor(
     public activeModal: NgbActiveModal,
-    private formBuilder: FormBuilder,
+    private formBuilder:FormBuilder,
     private tallerService: TallerService,
     private programaService: ProgramaService
   ) { }
 
   Id = document.getElementById('id');
+
   ngOnInit(): void {
     this.formInit(); //el formulario esta inicializado
     this.getProgramas();
@@ -69,7 +70,6 @@ export class FormModalTallerComponent implements OnInit {
     });
   }
   updateData(): void {
-    //xd
     let data = Object.assign(this.item, {proId: this.item.programa.proId});
     this.frmTaller.patchValue(data);
   }
